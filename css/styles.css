@@ -319,15 +319,15 @@ project-title and team-title have similar css ----------*/
      background-color: var(--pressed-state-color);
  }
 .team-soc-icon {
-    /* fill: var(--background-color); */
+    fill: var(--light-color);
 }
 .team-soc-item {
     width: 40px;
     height: 40px;
 }
-.team-icon-color {
+/* .team-icon-color {
     fill: #f4f4fd;
-}
+} */
 .team-text {
     margin-bottom: 8px;
 }
@@ -412,8 +412,9 @@ project-title and team-title have similar css ----------*/
 }
 .footer-soc-text {
     font-weight: 500;
-    color: var(--light-color);
+    color: var(--background-color);
     margin-bottom: 16px;
+    
 }
 .footer-soc {
     display: flex;
@@ -465,7 +466,7 @@ project-title and team-title have similar css ----------*/
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     padding: 12px 24px;
-    transition: background-color box-shadow border-color color var(--transition);
+    transition: background-color var(--transition) box-shadow var(--transition) border-color var(--transition) color var(--transition);
 }
 .filter-btn:is(:hover, :focus) {
     color: var(--background-color);
@@ -503,6 +504,15 @@ project-title and team-title have similar css ----------*/
 .products-item:is(:hover, :focus) {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+.product-link {
+    display: block;
+    transition: box-shadow var(--transition);
+}
+.product-link:is(:hover, :focus) {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 .text-wrap {
     flex-direction: column;
     padding: 32px 16px;
@@ -513,7 +523,6 @@ project-title and team-title have similar css ----------*/
 .products-window {
     position: relative;
     overflow: hidden;
-    display: block;
 }
 .icon-text {
     font-size: 16px;
