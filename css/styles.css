@@ -115,8 +115,9 @@ img {
     left: 0;
     border-radius: 2px;
 }
-.address-item a {
+.address-item-link {
     color: var(--text-color);
+    transition: color var(--transition);
 }
 .header-navigation {
     display: flex;
@@ -465,7 +466,13 @@ project-title and team-title have similar css ----------*/
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     padding: 12px 24px;
-    transition: background-color var(--transition) box-shadow var(--transition) border-color var(--transition) color var(--transition);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.filter-item {
+
 }
 .filter-btn:is(:hover, :focus) {
     color: var(--background-color);
@@ -480,7 +487,7 @@ project-title and team-title have similar css ----------*/
     margin-bottom: 72px;
 }
 
-.filter-item {}
+
 
 /*---------PRODUCTS------------*/
 .products {}
