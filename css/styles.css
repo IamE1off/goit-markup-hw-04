@@ -44,6 +44,7 @@ img {
 }
 .link {
     text-decoration: none;
+    transition: color var(--transition);
 }
 .list {
     list-style-type: none;
@@ -72,7 +73,8 @@ img {
     padding-top: 24px;
     padding-bottom: 24px;
     background-color: var(--background-color);
-    border-bottom: 1px solid #e7e9fc;
+    border-bottom: 1px solid var(--accent-color);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-logo {
     font-family: 'Raleway', sans-serif;
@@ -87,18 +89,29 @@ img {
 .logo-change {
     color: var(--dark-color);
 }
-.header-item a {
+.header-menu {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--dark-color);
     padding: 24px 0;
+    transition: color var(--transition);
+}
+.active::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: var(--pressed-state-color);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    border-radius: 2px;
 }
 .address-item a {
     color: var(--text-color);
 }
-.link:is(:hover, :focus, :active) {
+.link:is(:hover, :focus) {
     color: var(--pressed-state-color);
     
 }
@@ -132,8 +145,12 @@ img {
 /*-------------HERO---------*/
 .hero {
     background-color: var(--dark-color);
-    padding-top: 188px;
-    padding-bottom: 188px;
+    padding: 188px 0;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
 }
 .hero-title {
     font-weight: 700;
@@ -163,6 +180,7 @@ img {
     border: none;
     min-width: 169px;
     border-radius: 4px;
+    transition: background-color var(--transition);
 
 }
 .hero-btn:is(:hover, :focus){
@@ -306,12 +324,56 @@ project-title and team-title have similar css ----------*/
 .team-text {
     margin-bottom: 8px;
 }
+.customers {
+    padding: 120px 0;
+}
+.customers-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    color: var(--dark-color);
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 72px;
+}
 
+.customers-list {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.customers-item {
+    width: calc((100% - 120px) / 6);
+    height: 88px;
+}
+
+.customers-item-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--subtle-text-color);
+    border: 1px solid var(--subtle-text-color);
+    border-radius: 4px;
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.customers-item-link:hover,
+.customers-item-link:focus {
+    border: 1px solid var(--pressed-state-color);
+    color: var(--pressed-state-color);
+}
+
+.customers-item-ico {
+    fill: currentColor;
+}
 /*--------------FOOTER---------------*/
 .footer {
     background-color: var(--dark-color);
-    padding: 100px 0;
-    
+    padding: 100px 0; 
 }
 .footer-logo {
     display: inline-block;
@@ -328,9 +390,53 @@ project-title and team-title have similar css ----------*/
     color: var(--light-color);
     
 }
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    
+}
+.footer-logo-container {
+    margin-right: 120px;
+}
 .footer-text {
-    color:var(--light-color);
-    max-width: 264px;
+    color: var(--light-color);
+    width: 264px;
+}
+.footer-soc-text {
+    font-weight: 500;
+    color: var(--light-color);
+    margin-bottom: 16px;
+}
+.footer-soc {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+}
+
+.footer-soc-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-soc-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-brand-color);
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    transition: background-color var(--transition);
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+    background-color: var(--success-color);
+}
+
+
+.footer-soc-pic {
+    fill: var(--light-color);
 }
 
 /*-----------FILTER-----------*/
@@ -351,6 +457,7 @@ project-title and team-title have similar css ----------*/
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     padding: 12px 24px;
+    transition: background-color border color var(--transition);
 }
 .filter-btn:is(:hover, :focus, :active) {
     color: var(--background-color);
@@ -405,4 +512,74 @@ project-title and team-title have similar css ----------*/
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text-color);
+}
+
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    transition: opacity var(--transition), visibility var(--transition);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition);
+    width: 408px;
+    min-height: 584px;
+    background-color: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-btn {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition), border var(--transition);
+}
+
+.close-btn {
+    fill: #2e2f42;
+    transition: fill var(--transition);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-btn:hover .close-btn,
+.modal-btn:focus .close-btn {
+    fill: #ffffff;
+}
+
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
