@@ -44,7 +44,6 @@ img {
 }
 .link {
     text-decoration: none;
-    transition: color var(--transition);
 }
 .list {
     list-style-type: none;
@@ -501,9 +500,9 @@ project-title and team-title have similar css ----------*/
     transition: box-shadow var(--transition);
     
 }
-.products-item:is(:hover, :focus) {
+/* .products-item:is(:hover, :focus) {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
+} */
 .product-link {
     display: block;
     transition: box-shadow var(--transition);
@@ -539,11 +538,9 @@ project-title and team-title have similar css ----------*/
     transform: translateY(100%);
     transition: transform var(--transition);
 }
-.products-window {
-    transition: transform var(--transition)
-}
-.products-item:hover .icon-text,
-.products-item:focus .icon-text {
+
+.product-link:hover .icon-text,
+.product-link:focus .icon-text {
     transform: translateY(0);
 }
 
