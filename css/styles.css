@@ -303,11 +303,7 @@ project-title and team-title have similar css ----------*/
     align-items: center;
     justify-content: center;
 }
-.team-soc-item {
-    width: 40px;
-    height: 40px;
-    fill: #f4f4fd;
-}
+
 .team-soc-link {
     display: flex;
     align-items: center;
@@ -323,7 +319,14 @@ project-title and team-title have similar css ----------*/
      background-color: var(--pressed-state-color);
  }
 .team-soc-icon {
-    fill: var(--background-color);
+    /* fill: var(--background-color); */
+}
+.team-soc-item {
+    width: 40px;
+    height: 40px;
+}
+.team-icon-color {
+    fill: #f4f4fd;
 }
 .team-text {
     margin-bottom: 8px;
