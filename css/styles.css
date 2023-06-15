@@ -325,9 +325,7 @@ project-title and team-title have similar css ----------*/
     width: 40px;
     height: 40px;
 }
-/* .team-icon-color {
-    fill: #f4f4fd;
-} */
+
 .team-text {
     margin-bottom: 8px;
 }
@@ -344,14 +342,12 @@ project-title and team-title have similar css ----------*/
     letter-spacing: 0.02em;
     margin-bottom: 72px;
 }
-
 .customers-list {
     display: flex;
     gap: 24px;
     align-items: center;
     justify-content: center;
 }
-
 .customers-item {
     width: calc((100% - 120px) / 6);
     height: 88px;
@@ -667,11 +663,9 @@ project-title and team-title have similar css ----------*/
 }
 .input-icon {
     position: absolute;
-    left: 19px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
     fill: #2E2F42; 
 }
-.email-icon {
-left: 17.5px;
-}
+
