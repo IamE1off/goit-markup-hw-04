@@ -667,11 +667,8 @@ project-title and team-title have similar css ----------*/
 }
 .input-icon {
     position: absolute;
-    left: 19px;
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
     fill: #2E2F42; 
-}
-.email-icon {
-left: 17.5px;
 }
