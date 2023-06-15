@@ -670,6 +670,7 @@ project-title and team-title have similar css ----------*/
     left: 19px;
     top: 50%;
     transform: translateY(-50%);
+    fill: #2E2F42; 
 }
 .email-icon {
 left: 17.5px;
