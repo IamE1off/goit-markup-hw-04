@@ -410,6 +410,9 @@ project-title and team-title have similar css ----------*/
     color: #ffffff;
     width: 264px;
 }
+.footer-social-container {
+    margin-right: 80px;
+}
 .footer-soc-text {
     font-weight: 500;
     color: var(--background-color);
@@ -452,8 +455,6 @@ project-title and team-title have similar css ----------*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
-    
 }
 
 .subscribe-input {
@@ -471,6 +472,7 @@ project-title and team-title have similar css ----------*/
     display: flex;
     align-items: center;
     color: #FFFFFF;
+    margin-right: 24px;
 }
 
 .subscribe-input::placeholder {
@@ -500,12 +502,19 @@ project-title and team-title have similar css ----------*/
     align-items: center;
     justify-content: center;
     transition: background-color var(--transition);
+   
 
 }
 
 .subscribe-btn:is(:hover, :focus) {
     background-color: var(--pressed-state-color);
 }
+.newsletter-icon {
+    position: relative;
+    fill: var(--background-color);
+}
+
+
 /*-----------FILTER-----------*/
 .filter {
     padding-top: 96px;
