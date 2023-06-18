@@ -491,9 +491,10 @@ project-title and team-title have similar css ----------*/
     letter-spacing: 0.04em;
     color: var(--background-color);
     cursor: pointer;
-    display: block;
-    padding: 16px 32px;
+    padding: 8px 24px;
     margin: 0 auto;
+    display: inline-flex;
+    gap: 16px;
     border: none;
     width: 165px;
     height: 40px;
@@ -510,8 +511,12 @@ project-title and team-title have similar css ----------*/
     background-color: var(--pressed-state-color);
 }
 .newsletter-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     fill: var(--background-color);
+    transform: translateY(45%);
 }
 
 
